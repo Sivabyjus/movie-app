@@ -14,7 +14,7 @@ import {
 import SearchSection from "./components/SearchSection";
 
 export default function App() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const [searchValue, setSearchValue] = useState("");
 
   function onChangeSearchValue(event) {
@@ -34,8 +34,7 @@ export default function App() {
   }
 
   function fetchMovies() {
-    // fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=33c89a65`)
-    fetch(`http://localhost:5000/${searchValue}`)
+    fetch(`http://localhost:5000/getMovies/${searchValue}`)
       .then((response) => response.json())
       .then((result) => setData(result))
       .catch((error) => console.log("error", error));
@@ -45,15 +44,12 @@ export default function App() {
 
   return (
     <Container style={{ marginTop: "60px" }}>
-
       <SearchSection
         onChangeSearchValue={onChangeSearchValue}
         onKeyPressSearchValue={onKeyPressSearchValue}
         onClickSearch={onClickSearch}
       />
-
       <br />
-
       <section className="movies-section">
         <Row>
           {data && data.length > 0 &&
@@ -85,7 +81,6 @@ export default function App() {
             })}
         </Row>
       </section>
-
     </Container>
   );
 }
