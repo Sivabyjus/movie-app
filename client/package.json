@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "axios": "^0.21.0",
     "bootstrap": "4.5.3",
     "mongoose": "^5.10.11",
     "nodemon": "^2.0.6",

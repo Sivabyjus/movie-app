@@ -7,5 +7,4 @@ const Movie = mongoose.model('Movie', {
      year : String  
 });
 
-
 module.exports = Movie;
