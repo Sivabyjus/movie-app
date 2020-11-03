@@ -1,10 +1,10 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const Movie = mongoose.model('movie', {
-  title: String,
-  year: String,
-  poster: String,
-  imdbID: String,
-})
+const Movie = mongoose.model('Movie', {
+     title: String,
+     imdbId : String,
+     poster : String,
+     year : String  
+},'movies');
 
-module.exports = Movie
+module.exports = Movie;
